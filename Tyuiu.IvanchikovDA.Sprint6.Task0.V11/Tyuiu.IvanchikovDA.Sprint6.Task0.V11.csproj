@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7BD6F0F0-9841-489D-9F46-76B4479F8C06}</ProjectGuid>
+    <ProjectGuid>{89FD89ED-BD7A-4AE8-A5E4-2E59F28BE207}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsMyAppFirst</RootNamespace>
-    <AssemblyName>WindowsFormsMyAppFirst</AssemblyName>
+    <RootNamespace>Tyuiu.IvanchikovDA.Sprint6.Task0.V11</RootNamespace>
+    <AssemblyName>Tyuiu.IvanchikovDA.Sprint6.Task0.V11</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tyuiu.IvanchikovDA.Sprint6.Task0.V11.Lib\Tyuiu.IvanchikovDA.Sprint6.Task0.V11.Lib.csproj">
+      <Project>{374601af-3abf-4f14-85d5-bec35f36ac16}</Project>
+      <Name>Tyuiu.IvanchikovDA.Sprint6.Task0.V11.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
