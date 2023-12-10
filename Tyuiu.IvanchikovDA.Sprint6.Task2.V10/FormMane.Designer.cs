@@ -29,13 +29,16 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task2.V10
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxTask_DA = new System.Windows.Forms.GroupBox();
             this.textBoxTask_DA = new System.Windows.Forms.TextBox();
             this.pictureBoxFormula_DA = new System.Windows.Forms.PictureBox();
             this.groupBoxResult_DA = new System.Windows.Forms.GroupBox();
+            this.dataGridViewFunction = new System.Windows.Forms.DataGridView();
+            this.Columnx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columnf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelOutPut_DA = new System.Windows.Forms.Label();
             this.textBoxResult_DA = new System.Windows.Forms.TextBox();
             this.groupBoxInPut_DA = new System.Windows.Forms.GroupBox();
@@ -47,15 +50,12 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task2.V10
             this.buttonDone = new System.Windows.Forms.Button();
             this.chartFunction = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelTask = new System.Windows.Forms.Label();
-            this.dataGridViewFunction = new System.Windows.Forms.DataGridView();
-            this.Columnx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Columnf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxTask_DA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFormula_DA)).BeginInit();
             this.groupBoxResult_DA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFunction)).BeginInit();
             this.groupBoxInPut_DA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFunction)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxTask_DA
@@ -101,6 +101,32 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task2.V10
             this.groupBoxResult_DA.TabIndex = 2;
             this.groupBoxResult_DA.TabStop = false;
             this.groupBoxResult_DA.Text = "Вывод данных";
+            this.groupBoxResult_DA.Enter += new System.EventHandler(this.groupBoxResult_DA_Enter);
+            // 
+            // dataGridViewFunction
+            // 
+            this.dataGridViewFunction.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewFunction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFunction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Columnx,
+            this.Columnf});
+            this.dataGridViewFunction.Location = new System.Drawing.Point(52, 59);
+            this.dataGridViewFunction.Name = "dataGridViewFunction";
+            this.dataGridViewFunction.RowHeadersVisible = false;
+            this.dataGridViewFunction.Size = new System.Drawing.Size(111, 284);
+            this.dataGridViewFunction.TabIndex = 2;
+            // 
+            // Columnx
+            // 
+            this.Columnx.HeaderText = "X";
+            this.Columnx.Name = "Columnx";
+            this.Columnx.Width = 50;
+            // 
+            // Columnf
+            // 
+            this.Columnf.HeaderText = "F(x)";
+            this.Columnf.Name = "Columnf";
+            this.Columnf.Width = 50;
             // 
             // labelOutPut_DA
             // 
@@ -195,18 +221,18 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task2.V10
             // 
             // chartFunction
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartFunction.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartFunction.Legends.Add(legend6);
+            chartArea1.Name = "ChartArea1";
+            this.chartFunction.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartFunction.Legends.Add(legend1);
             this.chartFunction.Location = new System.Drawing.Point(731, 76);
             this.chartFunction.Name = "chartFunction";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.IsVisibleInLegend = false;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartFunction.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartFunction.Series.Add(series1);
             this.chartFunction.Size = new System.Drawing.Size(491, 338);
             this.chartFunction.TabIndex = 5;
             this.chartFunction.Text = "chart1";
@@ -219,31 +245,6 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task2.V10
             this.labelTask.Size = new System.Drawing.Size(118, 13);
             this.labelTask.TabIndex = 6;
             this.labelTask.Text = "График функции sin(x)";
-            // 
-            // dataGridViewFunction
-            // 
-            this.dataGridViewFunction.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridViewFunction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFunction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Columnx,
-            this.Columnf});
-            this.dataGridViewFunction.Location = new System.Drawing.Point(52, 59);
-            this.dataGridViewFunction.Name = "dataGridViewFunction";
-            this.dataGridViewFunction.RowHeadersVisible = false;
-            this.dataGridViewFunction.Size = new System.Drawing.Size(111, 284);
-            this.dataGridViewFunction.TabIndex = 2;
-            // 
-            // Columnx
-            // 
-            this.Columnx.HeaderText = "X";
-            this.Columnx.Name = "Columnx";
-            this.Columnx.Width = 50;
-            // 
-            // Columnf
-            // 
-            this.Columnf.HeaderText = "F(x)";
-            this.Columnf.Name = "Columnf";
-            this.Columnf.Width = 50;
             // 
             // FormMane
             // 
@@ -267,10 +268,10 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task2.V10
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFormula_DA)).EndInit();
             this.groupBoxResult_DA.ResumeLayout(false);
             this.groupBoxResult_DA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFunction)).EndInit();
             this.groupBoxInPut_DA.ResumeLayout(false);
             this.groupBoxInPut_DA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFunction)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

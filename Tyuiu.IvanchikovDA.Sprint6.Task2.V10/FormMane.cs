@@ -76,5 +76,10 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task2.V10
         {
             buttonDone.BackColor = Color.Blue;
         }
+
+        private void groupBoxResult_DA_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
