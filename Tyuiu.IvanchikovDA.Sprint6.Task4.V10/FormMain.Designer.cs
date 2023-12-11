@@ -29,10 +29,10 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.groupBoxTask_DA = new System.Windows.Forms.GroupBox();
             this.textBoxTask_DA = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -146,24 +146,24 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             // 
             // chartFunction
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartFunction.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartFunction.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartFunction.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartFunction.Legends.Add(legend2);
             this.chartFunction.Location = new System.Drawing.Point(320, 115);
             this.chartFunction.Name = "chartFunction";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.IsXValueIndexed = true;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartFunction.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.IsXValueIndexed = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartFunction.Series.Add(series2);
             this.chartFunction.Size = new System.Drawing.Size(913, 542);
             this.chartFunction.TabIndex = 7;
             this.chartFunction.Text = "chartFunction";
-            title1.Name = "График функции sin(x)";
-            title1.Text = "График функции six(x)";
-            this.chartFunction.Titles.Add(title1);
+            title2.Name = "График функции sin(x)";
+            title2.Text = "График функции six(x)";
+            this.chartFunction.Titles.Add(title2);
             // 
             // groupBoxTask2_DA
             // 
@@ -207,7 +207,7 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxTask_DA);
             this.Name = "FormMain";
-            this.Text = "Form1";
+            this.Text = "Спринт6 | Таск 5 | Вариант 26 | Иванчиков Д.А.";
             this.groupBoxTask_DA.ResumeLayout(false);
             this.groupBoxTask_DA.PerformLayout();
             this.groupBox1.ResumeLayout(false);
