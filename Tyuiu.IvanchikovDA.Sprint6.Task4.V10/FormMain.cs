@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tyuiu.IvanchikovDA.Sprint6.Task4.V10.Lib;
+using System.IO;
 
 namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
 {
@@ -17,7 +18,7 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
         {
             InitializeComponent();
         }
-
+        DataService ds = new DataService();
         private void textBoxTask_DA_TextChanged(object sender, EventArgs e)
         {
 
@@ -28,20 +29,25 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             try
             {
                 int startStep = Convert.ToInt32(textBoxStartStep_DA.Text);
-                int stopStep = Convert.ToInt32(textBoxStopStep_DA.Text);
+                int stoptStep = Convert.ToInt32(textBoxStopStep_DA.Text);
 
-                int len = ds.GetMassFunction(startStep, stopStep);
+                int len = ds.GetMassFunction(startStep, stoptStep).Length;
+
+                double[] valueArray;
+                valueArray = new double[len];
+
+                valueArray = ds.GetMassFunction(startStep, stoptStep);
 
                 this.chartFunction.ChartAreas[0].AxisX.Title = "Ось X";
-                this.chartFunction.ChartAreas[0].AxisX.Title = "Ось Y";
+                this.chartFunction.ChartAreas[0].AxisY.Title = "Ось Y";
 
-                textBoxResult.Text = "";
+                textBoxStopStep_DA.Text = "";
 
                 chartFunction.Series[0].Points.Clear();
-                for (int i = 0; i <= len - 1; i++)
+                for (int i = 0; i < len; i++)
                 {
-                    this.chartFunction.ChartAreas[0].Points.AddXY(startStep, valueArray[i]);
-                    textBoxResult.AppendText(valueArray[i] + Environment.NewLine);
+                    this.chartFunction.Series[0].Points.AddXY(startStep, valueArray[i]);
+                    textBoxResult_DA.AppendText(valueArray[i] + Environment.NewLine);
                     startStep++;
                 }
             }
@@ -51,4 +57,33 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
 
             }
         }
-    
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask4V30.txt";
+                File.WriteAllText(path, textBoxStopStep_DA.Text);
+
+                DialogResult dialogResult = MessageBox.Show("Файл" + path + " сохранен успешно!\nОткрыть его в блокноте?", "Сообщение", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process txt = new System.Diagnostics.Process();
+                    txt.StartInfo.FileName = "OutPutFileTask4V30.txt";
+                    txt.StartInfo.Arguments = path;
+                    txt.Start();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Сбой при сохранении файла", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Таск 4 выполнил студент группы ПКТб-23-1 Иванчиков Дмитрий Александрович", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+}

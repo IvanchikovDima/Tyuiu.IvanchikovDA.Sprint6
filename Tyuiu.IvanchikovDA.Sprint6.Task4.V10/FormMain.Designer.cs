@@ -36,18 +36,20 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             this.groupBoxTask_DA = new System.Windows.Forms.GroupBox();
             this.textBoxTask_DA = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxStopStep_DA = new System.Windows.Forms.TextBox();
+            this.textBoxStartStep_DA = new System.Windows.Forms.TextBox();
+            this.labelResult_DA = new System.Windows.Forms.Label();
+            this.labelInPut_DA = new System.Windows.Forms.Label();
             this.buttonDone = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
-            this.labelInPut_DA = new System.Windows.Forms.Label();
-            this.labelResult_DA = new System.Windows.Forms.Label();
-            this.textBoxStartStep_DA = new System.Windows.Forms.TextBox();
-            this.textBoxStopStep_DA = new System.Windows.Forms.TextBox();
             this.chartFunction = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxTask2_DA = new System.Windows.Forms.GroupBox();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.textBoxResult_DA = new System.Windows.Forms.TextBox();
             this.groupBoxTask_DA.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunction)).BeginInit();
+            this.groupBoxTask2_DA.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxTask_DA
@@ -86,6 +88,38 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ввод данных";
             // 
+            // textBoxStopStep_DA
+            // 
+            this.textBoxStopStep_DA.Location = new System.Drawing.Point(127, 53);
+            this.textBoxStopStep_DA.Name = "textBoxStopStep_DA";
+            this.textBoxStopStep_DA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxStopStep_DA.TabIndex = 10;
+            // 
+            // textBoxStartStep_DA
+            // 
+            this.textBoxStartStep_DA.Location = new System.Drawing.Point(6, 53);
+            this.textBoxStartStep_DA.Name = "textBoxStartStep_DA";
+            this.textBoxStartStep_DA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxStartStep_DA.TabIndex = 9;
+            // 
+            // labelResult_DA
+            // 
+            this.labelResult_DA.AutoSize = true;
+            this.labelResult_DA.Location = new System.Drawing.Point(124, 34);
+            this.labelResult_DA.Name = "labelResult_DA";
+            this.labelResult_DA.Size = new System.Drawing.Size(69, 13);
+            this.labelResult_DA.TabIndex = 8;
+            this.labelResult_DA.Text = "Конец шага:";
+            // 
+            // labelInPut_DA
+            // 
+            this.labelInPut_DA.AutoSize = true;
+            this.labelInPut_DA.Location = new System.Drawing.Point(6, 34);
+            this.labelInPut_DA.Name = "labelInPut_DA";
+            this.labelInPut_DA.Size = new System.Drawing.Size(67, 13);
+            this.labelInPut_DA.TabIndex = 7;
+            this.labelInPut_DA.Text = "Старт шага:";
+            // 
             // buttonDone
             // 
             this.buttonDone.BackColor = System.Drawing.Color.ForestGreen;
@@ -108,38 +142,7 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             this.buttonHelp.TabIndex = 6;
             this.buttonHelp.Text = "Справка";
             this.buttonHelp.UseVisualStyleBackColor = false;
-            // 
-            // labelInPut_DA
-            // 
-            this.labelInPut_DA.AutoSize = true;
-            this.labelInPut_DA.Location = new System.Drawing.Point(6, 34);
-            this.labelInPut_DA.Name = "labelInPut_DA";
-            this.labelInPut_DA.Size = new System.Drawing.Size(67, 13);
-            this.labelInPut_DA.TabIndex = 7;
-            this.labelInPut_DA.Text = "Старт шага:";
-            // 
-            // labelResult_DA
-            // 
-            this.labelResult_DA.AutoSize = true;
-            this.labelResult_DA.Location = new System.Drawing.Point(124, 34);
-            this.labelResult_DA.Name = "labelResult_DA";
-            this.labelResult_DA.Size = new System.Drawing.Size(69, 13);
-            this.labelResult_DA.TabIndex = 8;
-            this.labelResult_DA.Text = "Конец шага:";
-            // 
-            // textBoxStartStep_DA
-            // 
-            this.textBoxStartStep_DA.Location = new System.Drawing.Point(6, 53);
-            this.textBoxStartStep_DA.Name = "textBoxStartStep_DA";
-            this.textBoxStartStep_DA.Size = new System.Drawing.Size(100, 20);
-            this.textBoxStartStep_DA.TabIndex = 9;
-            // 
-            // textBoxStopStep_DA
-            // 
-            this.textBoxStopStep_DA.Location = new System.Drawing.Point(127, 53);
-            this.textBoxStopStep_DA.Name = "textBoxStopStep_DA";
-            this.textBoxStopStep_DA.Size = new System.Drawing.Size(100, 20);
-            this.textBoxStopStep_DA.TabIndex = 10;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // chartFunction
             // 
@@ -164,6 +167,7 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             // 
             // groupBoxTask2_DA
             // 
+            this.groupBoxTask2_DA.Controls.Add(this.textBoxResult_DA);
             this.groupBoxTask2_DA.Location = new System.Drawing.Point(12, 106);
             this.groupBoxTask2_DA.Name = "groupBoxTask2_DA";
             this.groupBoxTask2_DA.Size = new System.Drawing.Size(302, 542);
@@ -173,25 +177,32 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             // 
             // buttonSave
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.Violet;
-            this.buttonSave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.buttonSave.Location = new System.Drawing.Point(993, 33);
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonSave.Location = new System.Drawing.Point(1003, 38);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(105, 67);
-            this.buttonSave.TabIndex = 5;
+            this.buttonSave.Size = new System.Drawing.Size(93, 62);
+            this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonDone_Click);
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // textBoxResult_DA
+            // 
+            this.textBoxResult_DA.Location = new System.Drawing.Point(7, 19);
+            this.textBoxResult_DA.Multiline = true;
+            this.textBoxResult_DA.Name = "textBoxResult_DA";
+            this.textBoxResult_DA.Size = new System.Drawing.Size(289, 517);
+            this.textBoxResult_DA.TabIndex = 0;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 660);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.groupBoxTask2_DA);
             this.Controls.Add(this.chartFunction);
             this.Controls.Add(this.buttonHelp);
-            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonDone);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxTask_DA);
@@ -202,6 +213,8 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunction)).EndInit();
+            this.groupBoxTask2_DA.ResumeLayout(false);
+            this.groupBoxTask2_DA.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -220,6 +233,7 @@ namespace Tyuiu.IvanchikovDA.Sprint6.Task4.V10
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFunction;
         private System.Windows.Forms.GroupBox groupBoxTask2_DA;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.TextBox textBoxResult_DA;
     }
 }
 
